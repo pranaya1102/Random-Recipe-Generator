@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user feedbacks</title>
+    
+    <style>
+      .container {
+        border: 2px solid gray;
+        margin-top: 50px;
+      }
+      table, th, td {
+  border: 1px solid;
+}
+table {
+  width: 100%;
+}
+th {
+  height: 70px;
+}
+td {
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th >username</th>
+            <th >object id</th>
+            <th >liked Content</th>
+            <th >feedback</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var user of users) {%>
+          <tr>
+            <th scope="row"><%= user.user.username %></th>
+            <td><%= user._id %></td>
+            <td><%= user.liked %></td>
+            <td><%= user.suggestion %></td>
+          </tr>
+          <% }%>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

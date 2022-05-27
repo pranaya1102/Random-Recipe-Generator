@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OhMeal</title>
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="./main.css" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container"id="container">
+      <h1 class="logo">Meal and Meal(Zone for Chefs)</h1>
+      <p class="description">get random meal recipes and tutorials</p>
+      <button class="btn black" id="random-meal-btn">Random </button>
+      <button class="btn black" id="search-meal-btn">Search 🔎</button>
+      <button class="btn black" onclick="popupform()" id="random-meal-btn">Feedback </button>
+      <button class="btn black" onclick="showallfeedback()" id="random-meal-btn">Show all Feedback </button>
+      
+      
+    </div>
+    <section class="meal">
+      <div class="container">
+        <div class="flex align-center">
+          <button class="btn-back btn-1 mr-1" id="back-btn"><i class="far fa-fw fa-arrow-left"></i></button>
+          <div class="column">
+            <h1 class="meal__name"></h1>
+            <p class="meal__area text-gray"></p>
+          </div>
+        </div>
+        <div class="meal__details">
+          <img class="meal__img mb-1">
+          <h4 class="subtitle">Ingredients</h4>
+          <ul class="meal__ingredients mb-1"></ul>
+          <h4 class="subtitle">Instructions</h4>
+          <p class="meal__instructions mb-1"></p>
+          <div class="video-container">
+            <h4 class="subtitle">Video</h4>
+            <iframe class="meal__video"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="meal meals">
+      <div class="container">
+        <div class="flex align-center mb-1">
+          <button class="btn-back btn-2 mr-1" id="back-btn"><i class="far fa-fw fa-arrow-left"></i></button>
+          <form class="search-form">
+            <input type="text" class="search-input" id="search-input" placeholder="Enter your keyword" />
+          </form>
+        </div>
+        <div class="meal-cards"></div>
+      </div>
+    </section>
+    <div class="loader">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="container2  " id="container2" hidden>
+      <div id="form1" style="    border: 2px solid black;
+      padding: 20px;">
+        <p>Does the project solves your issue?</p><br><br>
+        <!--<div><button type="button">yes</button></div>
+        <div><button type="button">no</button></div>
+        <div><button type="button">not sure</button></div>-->
+          
+        <input type="radio" id="form1_yes"/><label>&nbsp&nbsp YES</label><br><br>
+        <input type="radio" id="form1_no"/><label>&nbsp&nbsp NO</label><br><br>
+        <input type="radio" id="form1_not_sure"/><label>&nbsp&nbsp Not Sure</label><br><br>
+
+        <button type="submit" class= "btn black" id="form1_button">NEXT</button>
+      
+      </div>
+      <div id="form2" style="
+      border: 2px solid cadetblue;
+      padding: 50px;
+  "hidden>
+        <h3>What is the issue?</h3><br>
+        <ul style="list-style-type: none;">
+          <li><input type="checkbox" id="form2_1"><label>&nbsp&nbsp Wrong Recipe</label></li><br>
+          <li><input type="checkbox" id="form2_2"><label>&nbsp&nbsp Wrong ingredients list</label></li>   <br>       
+          <li><input type="checkbox" id="form2_3"><label>&nbsp&nbsp Wrong video suggestion</label></li><br>
+          <li><input type="checkbox" id="form2_4"><label>&nbsp&nbsp Not so descriptive content</label></li><br>
+          <li><input type="checkbox" id="form2_5"><label>&nbsp&nbsp UI not good </label></li><br><br>
+
+        </ul>
+        <button type="submit" class= "btn black" id="form2_button">Next</button>
+        
+      </div>
+      <div id="form3" style="border: 2px solid black;
+      padding: 14px;" hidden><br>
+        <p>Please provide your feedback</p><br>
+        <textarea id="from3_response" style="    border: 2px solid cadetblue;
+        " name="Response" rows="4" cols="50"></textarea><br><br>
+      <button type="submit" class= "btn black" id="form3_button">SUBMIT</button>
+      </div>
+      
+    </div>
+    <script src="./app.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
